@@ -9,7 +9,7 @@ let blinktrade = new BlinkTradeWS({
 
 blinktrade.connect()
   .then(function() {
-    return blinktrade.login({ username: "age", password: config.pass, secondFactor: "<YOUR_SECOND FACTOR>" });
+    return blinktrade.login({ username: "age", password: config.pass, secondFactor: config.sfa });
   }).then(function() {
     console.log('Logged-in');
     checkBalance();
@@ -57,7 +57,7 @@ function checkMarket() {
 ///
 
 function print() {
-  let statusString = '👉 {latest}|👆 {high}|👇 {low}||💸 {balance_brl} 💎 {av_btc}|| Av.BRL: {av_brl}|| Lk.BRL: {lk_brl}';
+  let statusString = '👉. {latest}|👆. {high}|👇. {low}||💸.. {balance_brl} 💎. {av_btc}|| Av.BRL: {av_brl}|| Lk.BRL: {lk_brl}';
 
   for(var i in status) 
     statusString = statusString.replace('{'+i+'}', status[i]);
