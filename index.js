@@ -9,7 +9,7 @@ let blinktrade = new BlinkTradeWS({
 
 blinktrade.connect()
   .then(function() {
-    return blinktrade.login({ username: "age", password: config.pass, secondFactor: config.sfa });
+    return blinktrade.login({ username: "<YOUR_USERNAME>", password: config.pass, secondFactor: config.sfa });
   }).then(function() {
     console.log('Logged-in');
     checkBalance();
